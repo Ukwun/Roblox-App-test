@@ -1,0 +1,119 @@
+/* ✅ Tailwind v4 Core */
+@import "tailwindcss/preflight";
+@import "tailwindcss";
+
+/* ✅ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+
+/* ✅ CSS Variables */
+:root {
+  --max-frame-width: 1440px;
+  --color-bg: #030804;
+  --color-surface: #06100A;
+  --color-neon: #3DFF87;
+  --color-neon-2: #249951;
+  --color-muted: #9CA3AF;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ✅ Global Reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background: radial-gradient(farthest-corner at 20% 20%, rgba(30,40,29,0.45), transparent 20%),
+              linear-gradient(180deg, var(--color-bg) 0%, rgba(0,0,0,0.8) 100%);
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✅ Typography */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: white;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* ✅ Layout Helpers */
+.container-max {
+  max-width: var(--max-frame-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* ✅ Neon Divider */
+.section-divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(61,255,135,0.25) 0%,
+    rgba(36,153,81,0.10) 100%
+  );
+  margin: 56px 0;
+  border-radius: 2px;
+}
+
+/* ✅ Card Surfaces */
+.card-surface {
+  background: linear-gradient(180deg, rgba(6,16,10,0.95), rgba(3,8,4,0.90));
+  border-radius: 16px;
+}
+
+/* ✅ Neon Borders */
+.neon-border {
+  border: 1px solid rgba(61,255,135,0.06);
+  box-shadow: 0 0 0 1px rgba(61,255,135,0.06),
+              0 12px 28px rgba(0,0,0,0.65);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover,
+.card-hover:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.75),
+              0 0 30px rgba(61,255,135,0.12);
+}
+
+/* ✅ Price Badge */
+.price-badge {
+  background: linear-gradient(90deg,var(--color-neon),var(--color-neon-2));
+  color: #04120b;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* ✅ Tag */
+.item-tag {
+  background: rgba(255,255,255,0.04);
+  color: var(--color-neon);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* ✅ Avatar Overlap */
+.avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-stack > div {
+  margin-left: -8px;
+}

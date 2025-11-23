@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40">
+  <rect width="120" height="40" rx="8" fill="#08140E"/>
+  <g transform="translate(8,6)">
+    <circle cx="12" cy="12" r="10" fill="#3DFF87"/>
+    <text x="34" y="20" font-family="Poppins, sans-serif" font-size="12" fill="#DFFFE6">RoCart</text>
+  </g>
+</svg>

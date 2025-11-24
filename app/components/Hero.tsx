@@ -37,7 +37,7 @@ export default function Hero() {
         {/* Right Illustration */}
           <div className="hidden lg:flex flex-1 justify-end relative">
             <div
-              className="w-[440px] h-[440px] rounded-3xl card-surface neon-border shadow-xl flex items-center justify-center relative overflow-hidden z-20"
+              className="w-[440px] h-[440px] rounded-3xl card-surface neon-border shadow-xl flex items-center justify-center relative overflow-hidden z-50"
             style={{
               background:
                 "linear-gradient(135deg, rgba(11,38,22,0.75), transparent 55%)",
@@ -75,7 +75,7 @@ export default function Hero() {
 
       {/* Neon divider line */}
       <div
-        className="absolute left-6 right-6 bottom-8 h-1 rounded-full opacity-90 z-5"
+        className="absolute left-6 right-6 bottom-8 h-1 rounded-full opacity-90 z-0"
         style={{
           background:
             "linear-gradient(90deg, rgba(61,255,135,0.9), rgba(36,153,81,0.6))",

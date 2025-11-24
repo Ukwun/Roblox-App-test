@@ -26,7 +26,7 @@ export default function TrendingNow() {
         <div className="w-full h-[2px] bg-gradient-to-r from-primary/60 to-primary/20 rounded-full mb-12" />
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {items.map((it, idx) => (
             <div
               key={idx}
@@ -54,8 +54,8 @@ export default function TrendingNow() {
                 </span>
               </div>
 
-              {/* Tags + Button */}
-              <div className="flex items-center justify-between">
+              {/* Tags */}
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex gap-2">
                   <span className="px-2 py-1 rounded-full text-[10px] bg-white/5 text-muted">
                     Popular
@@ -64,7 +64,11 @@ export default function TrendingNow() {
                     Hot
                   </span>
                 </div>
-                <button className="text-xs rounded-full bg-primary px-4 py-2 font-semibold text-black transition-transform duration-200 hover:scale-105">
+              </div>
+
+              {/* CTA - gradient button centered under card */}
+              <div className="mt-2 flex justify-center">
+                <button className="btn-gradient rounded-full px-6 py-3 text-sm lg:text-base font-semibold text-black transition-transform duration-200 hover:scale-105">
                   Visit Market
                 </button>
               </div>

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-bg text-white pt-20">
       {/* Header */}
       <Header />
 
@@ -20,7 +20,7 @@ export default function Home() {
           <TrendingNow />
         </section>
 
-        <section className="w-full max-w-6xl px-6 py-16 bg-gray-50 rounded-xl">
+        <section className="w-full max-w-6xl px-6 py-16 bg-surface rounded-xl">
           <Trusted />
         </section>
       </main>

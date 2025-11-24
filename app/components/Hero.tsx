@@ -3,7 +3,12 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden px-6 pt-28 pb-28 lg:pt-36">
-      <div className="container flex flex-col lg:flex-row items-center lg:items-start gap-12 relative">
+      {/* faint background image behind hero content */}
+      <div className="absolute inset-0 flex justify-center items-start pointer-events-none z-0">
+        <img src="/images/Image 1.png" alt="bg-faint" className="max-w-[900px] opacity-10 object-contain" />
+      </div>
+
+      <div className="container flex flex-col lg:flex-row items-center lg:items-start gap-12 relative z-10">
         
         {/* Left column */}
         <div className="flex-1 text-center lg:text-left">
@@ -31,8 +36,8 @@ export default function Hero() {
 
         {/* Right Illustration */}
           <div className="hidden lg:flex flex-1 justify-end relative">
-          <div
-            className="w-[440px] h-[440px] rounded-3xl card-surface neon-border shadow-xl flex items-center justify-center relative overflow-hidden"
+            <div
+              className="w-[440px] h-[440px] rounded-3xl card-surface neon-border shadow-xl flex items-center justify-center relative overflow-hidden z-20"
             style={{
               background:
                 "linear-gradient(135deg, rgba(11,38,22,0.75), transparent 55%)",
@@ -70,7 +75,7 @@ export default function Hero() {
 
       {/* Neon divider line */}
       <div
-        className="absolute left-6 right-6 bottom-8 h-1 rounded-full opacity-90"
+        className="absolute left-6 right-6 bottom-8 h-1 rounded-full opacity-90 z-5"
         style={{
           background:
             "linear-gradient(90deg, rgba(61,255,135,0.9), rgba(36,153,81,0.6))",

@@ -1,86 +1,103 @@
 "use client";
+
 import Image from "next/image";
-import React from "react";
 
 const reviewers = [
   {
     name: "Melony J.",
     review: "Best process! Super smooth, got my items fast for cheap!",
     avatars: [
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
     ],
     rating: 4.5,
   },
   {
-    name: "Melony J.",
-    review: "Best process! Super smooth, got my items fast for cheap!",
+    name: "Carter D.",
+    review: "Fast delivery and trusted platform. Highly recommend!",
     avatars: [
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
     ],
-    rating: 4.5,
+    rating: 4.8,
   },
   {
-    name: "Melony J.",
-    review: "Best process! Super smooth, got my items fast for cheap!",
+    name: "Riley K.",
+    review: "Amazing experience! I’ll be buying again for sure.",
     avatars: [
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
-      "https://placehold.co/24x24",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
+      "https://placehold.co/32x32",
     ],
-    rating: 4.5,
+    rating: 5.0,
   },
 ];
 
-export default function Trusted(): JSX.Element {
+export default function Trusted() {
   return (
-    <section className="section bg-bg relative">
-      <div className="container-max px-6">
-        <div className="flex flex-col items-center mb-12">
-          <h2 className="text-white text-4xl font-bold mb-2">
-            Trusted with by <span className="text-primary">5,000+ Happy Buyers</span>
+    <section className="w-full py-20 bg-black">
+      <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Heading */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h2 className="text-white text-4xl font-bold mb-3">
+            Trusted by <span className="text-green-400">5,000+ Happy Buyers</span>
           </h2>
-          <p className="text-muted text-center max-w-2xl mb-8">
-            Join thousands of happy buyers who trust Rocart for their in-game items! From casual players to serious collectors, our customers keep coming back for quality and reliability. See some of our amazing supporters below:
+          <p className="text-gray-400 max-w-lg">
+            Players all over the world trust RoCart for fast and secure item delivery.
           </p>
         </div>
-        <div className="section-divider" />
+
+        {/* Review Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {reviewers.map((reviewer, idx) => (
-            <div key={idx} className="card-surface neon-border rounded-2xl p-8 relative shadow-card card-hover flex flex-col justify-between min-h-[220px]">
-              {/* Overlapping Avatars */}
-              <div className="avatar-stack mb-4">
+            <div
+              key={idx}
+              className="bg-[#0E1310] border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition"
+            >
+              {/* Avatars */}
+              <div className="flex -space-x-3 mb-4">
                 {reviewer.avatars.map((avatar, i) => (
-                  <div key={i} className={`w-7 h-7 rounded-full overflow-hidden ring-2 ring-[rgba(6,16,10,0.9)] bg-[#06100A]`}>
-                    <Image src={avatar} width={28} height={28} alt={`avatar-${i}`} unoptimized />
-                  </div>
+                  <Image
+                    key={i}
+                    src={avatar}
+                    width={32}
+                    height={32}
+                    className="rounded-full ring-2 ring-black"
+                    alt={`avatar-${i}`}
+                    unoptimized
+                  />
                 ))}
               </div>
 
-              {/* Verified Buy Badge */}
-              <div className="flex items-center mb-2">
-                <div className="w-10 h-9 rounded mr-2" style={{ background: 'linear-gradient(90deg,#3DFF87,#249951)' }} />
-                <span className="text-gray-300 text-xs font-semibold">Verified Buy</span>
+              {/* Badge */}
+              <div className="flex items-center mb-3">
+                <div className="w-10 h-3 rounded-full bg-green-400 mr-2" />
+                <span className="text-gray-400 text-xs font-semibold">
+                  Verified Purchase
+                </span>
               </div>
 
-              <h3 className="text-gray-200 font-semibold text-sm mb-1">{reviewer.name}</h3>
+              {/* Name */}
+              <h3 className="text-white font-semibold text-sm mb-1">
+                {reviewer.name}
+              </h3>
 
-              {/* Review Text */}
-              <p className="text-muted text-xs font-medium mb-2">{reviewer.review}</p>
+              {/* Review */}
+              <p className="text-gray-400 text-xs mb-4">{reviewer.review}</p>
 
               {/* Rating */}
-              <div className="mt-2 flex items-center gap-1">
-                <span className="text-primary font-semibold">{reviewer.rating}</span>
-                <span className="text-muted text-xs">out of 5.0</span>
+              <div className="flex items-center gap-1">
+                <span className="text-green-400 font-semibold">{reviewer.rating}</span>
+                <span className="text-gray-500 text-xs">/ 5.0</span>
               </div>
             </div>
           ))}

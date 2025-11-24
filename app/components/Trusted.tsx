@@ -43,35 +43,38 @@ const reviewers = [
 
 export default function Trusted() {
   return (
-    <section className="w-full py-20 bg-black">
-      <div className="max-w-6xl mx-auto px-6">
-        
+    <section className="section bg-bg relative mt-16">
+      <div className="container-max px-6">
+
         {/* Heading */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-white text-4xl font-bold mb-3">
-            Trusted by <span className="text-green-400">5,000+ Happy Buyers</span>
+        <div className="flex flex-col items-center text-center mb-12">
+          <h2 className="text-white text-4xl font-bold mb-2">
+            Trusted by <span className="text-primary">5,000+ Happy Buyers</span>
           </h2>
-          <p className="text-gray-400 max-w-lg">
+          <p className="text-muted max-w-2xl">
             Players all over the world trust RoCart for fast and secure item delivery.
           </p>
         </div>
 
+        {/* Divider */}
+        <div className="section-divider mb-12" />
+
         {/* Review Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
           {reviewers.map((reviewer, idx) => (
             <div
               key={idx}
-              className="bg-[#0E1310] border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition"
+              className="card-surface neon-border rounded-2xl p-8 shadow-card card-hover min-h-[220px] flex flex-col justify-between transition-transform duration-300 hover:-translate-y-4 hover:shadow-xl"
             >
-              {/* Avatars */}
+              {/* Avatar Stack */}
               <div className="flex -space-x-3 mb-4">
                 {reviewer.avatars.map((avatar, i) => (
                   <Image
                     key={i}
                     src={avatar}
-                    width={32}
-                    height={32}
-                    className="rounded-full ring-2 ring-black"
+                    width={36}
+                    height={36}
+                    className="rounded-full ring-2 ring-[rgba(0,0,0,0.6)]"
                     alt={`avatar-${i}`}
                     unoptimized
                   />
@@ -80,24 +83,32 @@ export default function Trusted() {
 
               {/* Badge */}
               <div className="flex items-center mb-3">
-                <div className="w-10 h-3 rounded-full bg-green-400 mr-2" />
-                <span className="text-gray-400 text-xs font-semibold">
-                  Verified Purchase
-                </span>
+                <div className="w-10 h-3 rounded-full bg-primary mr-2" />
+                <span className="text-muted text-xs font-semibold">Verified Purchase</span>
               </div>
 
               {/* Name */}
-              <h3 className="text-white font-semibold text-sm mb-1">
-                {reviewer.name}
-              </h3>
+              <h3 className="text-white font-semibold text-sm mb-1">{reviewer.name}</h3>
 
               {/* Review */}
-              <p className="text-gray-400 text-xs mb-4">{reviewer.review}</p>
+              <p className="text-muted text-sm mb-6">{reviewer.review}</p>
 
-              {/* Rating */}
-              <div className="flex items-center gap-1">
-                <span className="text-green-400 font-semibold">{reviewer.rating}</span>
-                <span className="text-gray-500 text-xs">/ 5.0</span>
+              {/* Rating (stars) */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: 5 }).map((_, s) => {
+                    const fill = reviewer.rating >= s + 1 ? 'var(--color-neon)' : 'rgba(255,255,255,0.08)';
+                    return (
+                      <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="none" className="inline-block">
+                        <path d="M12 .587l3.668 7.431L24 9.748l-6 5.847L19.335 24 12 19.897 4.665 24 6 15.595 0 9.748l8.332-1.73L12 .587z" fill={fill} />
+                      </svg>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center">
+                  <span className="text-primary font-semibold">{reviewer.rating}</span>
+                  <span className="text-muted text-xs ml-2">/ 5.0</span>
+                </div>
               </div>
             </div>
           ))}

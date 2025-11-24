@@ -7,6 +7,9 @@ const items = [
   { title: 'Adopt Me', price: '$9', img: '/images/item4.png' },
 ];
 
+// per-card gradient class mapping to match screenshot
+const cardButtonClasses = ['btn-green', 'btn-red', 'btn-purple', 'btn-blue'];
+
 export default function TrendingNow() {
   return (
     <section className="py-20">
@@ -23,35 +26,39 @@ export default function TrendingNow() {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-[2px] bg-gradient-to-r from-primary/60 to-primary/20 rounded-full mb-12" />
+        <div className="w-full h-[2px] bg-gradient-to-r from-primary/60 to-primary/20 rounded-full mb-16" />
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {items.map((it, idx) => (
             <div
               key={idx}
-              className="rounded-2xl bg-[#07120C] border border-primary/20 p-6 relative overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(61,255,135,0.25)]"
+              className="rounded-2xl bg-[#07120C] border border-primary/20 p-6 pb-8 relative overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(61,255,135,0.25)]"
             >
               {/* Image Box */}
-              <div className="relative h-40 rounded-xl overflow-hidden mb-6 flex items-center justify-center bg-[#0A1B12]">
-                <Image
-                  src={it.img}
-                  alt={it.title}
-                  width={140}
-                  height={140}
-                  className="object-contain"
-                  unoptimized
-                />
+              <div className="relative h-44 rounded-xl overflow-hidden mb-6 flex items-center justify-center bg-[#0A1B12]">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-28 h-28 bg-[#07120C] rounded-xl flex items-center justify-center p-2 neon-border">
+                    <Image src={it.img} alt={`${it.title}-a`} width={96} height={96} className="object-contain rounded-md" unoptimized />
+                  </div>
+
+                  <div className="w-28 h-28 bg-[#07120C] rounded-xl flex items-center justify-center p-2 neon-border">
+                    <Image src={it.img} alt={`${it.title}-b`} width={96} height={96} className="object-contain rounded-md" unoptimized />
+                  </div>
+                </div>
               </div>
 
-              {/* Title + Price */}
+              {/* Title + Price + small rounded placeholder */}
               <div className="flex items-center justify-between mb-4">
-                <span className="font-semibold text-white text-lg">
-                  {it.title}
-                </span>
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary text-black">
-                  {it.price}
-                </span>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-lg gradient-outline flex items-center justify-center">
+                    <div className="thumbnail-gradient">
+                      <img src="/images/logo.svg" alt="badge" className="w-6 h-6 object-contain" />
+                    </div>
+                  </div>
+                  <span className="font-semibold text-white text-lg">{it.title}</span>
+                </div>
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary text-black">{it.price}</span>
               </div>
 
               {/* Tags */}
@@ -67,10 +74,10 @@ export default function TrendingNow() {
               </div>
 
               {/* CTA - gradient button centered under card */}
-              <div className="mt-2 flex justify-center">
-                <button className="btn-gradient rounded-full px-6 py-3 text-sm lg:text-base font-semibold text-black transition-transform duration-200 hover:scale-105">
-                  Visit Market
-                </button>
+              <div className="mt-6 flex justify-center">
+                  <button className="btn-gradient btn-large btn-glow text-black shadow-lg tracking-tight transition-transform duration-200 hover:scale-105">
+                    Visit Market
+                  </button>
               </div>
             </div>
           ))}

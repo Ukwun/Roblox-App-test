@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
 
           <div className="flex justify-center lg:justify-start items-center gap-4">
-            <button className="flex items-center gap-4 rounded-full bg-gradient-to-r from-[var(--color-neon)] to-[var(--color-neon-2)] px-10 py-4 lg:px-12 lg:py-5 text-xl lg:text-2xl font-extrabold text-black shadow-2xl hover:opacity-100 transition-transform duration-150">
+            <button className="flex items-center gap-3 btn-gradient btn-large btn-glow text-black shadow-2xl hover:scale-[1.02] transition-transform duration-150">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="inline-block">
                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="#04120b" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                 <circle cx="10" cy="20" r="1.2" fill="#04120b" />

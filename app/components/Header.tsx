@@ -44,7 +44,7 @@ export default function Header() {
               <span className="text-sm">English / USD</span>
             </button>
 
-            <button className="flex items-center rounded-full bg-gradient-to-r from-[var(--color-neon)] to-[var(--color-neon-2)] px-8 py-3 lg:px-9 lg:py-4 text-lg font-bold text-black hover:opacity-100 transition-shadow duration-150 shadow-xl gap-3">
+            <button className="flex items-center rounded-full btn-gradient btn-large btn-glow text-black hover:opacity-100 transition-shadow duration-150 shadow-xl gap-3">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="inline-block">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM4 20c0-2.21 3.58-4 8-4s8 1.79 8 4v1H4v-1z" fill="#04120b" />
               </svg>

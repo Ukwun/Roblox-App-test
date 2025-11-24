@@ -83,8 +83,94 @@ h1, h2, h3, h4, h5 {
 
 /* Gradient button helper used for CTAs under cards */
 .btn-gradient {
-  background: linear-gradient(90deg, var(--color-neon) 0%, var(--color-neon-2) 100%);
-  box-shadow: 0 8px 18px rgba(36,153,81,0.12), inset 0 -6px 18px rgba(255,255,255,0.02);
+  background: linear-gradient(90deg, var(--color-neon) 0%, var(--color-neon-2) 45%, #2fd06a 60%);
+  box-shadow: 0 14px 30px rgba(36,153,81,0.18), inset 0 -6px 22px rgba(255,255,255,0.04), 0 2px 0 rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Solid dark button with neon outline */
+.btn-solid {
+  background: linear-gradient(180deg, rgba(6,16,10,0.9), rgba(3,8,4,0.95));
+  border: 1px solid rgba(61,255,135,0.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 -4px 12px rgba(255,255,255,0.02);
+}
+
+/* Large button utility for heavier CTAs */
+.btn-large {
+  padding-left: 1.25rem; /* 20px */
+  padding-right: 1.25rem;
+  padding-top: 0.85rem; /* ~14px */
+  padding-bottom: 0.85rem;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 800;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+/* Slight stronger glow for very important CTAs */
+.btn-glow {
+  box-shadow: 0 18px 50px rgba(61,255,135,0.16), 0 4px 6px rgba(0,0,0,0.6);
+}
+
+/* Neon gradient outline for thumbnails and buttons */
+.gradient-outline {
+  padding: 2px; /* thickness of outline */
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(61,255,135,0.9) 0%, rgba(36,153,81,0.9) 50%, rgba(61,125,255,0.85) 100%);
+}
+
+.thumbnail-gradient {
+  background: linear-gradient(180deg, rgba(6,16,10,0.95), rgba(3,8,4,0.9));
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button with gradient outline and dark inner background */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 3px; /* outline thickness */
+  background: linear-gradient(90deg, rgba(61,255,135,0.9) 0%, rgba(36,153,81,0.9) 50% , rgba(61,125,255,0.85) 100%);
+}
+.btn-outline > .btn-inner {
+  background: linear-gradient(180deg, rgba(6,16,10,0.95), rgba(3,8,4,0.96));
+  border-radius: 999px;
+  padding: 10px 22px;
+  color: #e6ffef;
+  font-weight: 800;
+  box-shadow: inset 0 -4px 12px rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 640px) {
+  .btn-outline > .btn-inner { padding: 8px 16px; font-size: 14px; }
+  .btn-large { padding-left: 0.9rem; padding-right: 0.9rem; padding-top:0.6rem; padding-bottom:0.6rem; font-size: 16px; }
+}
+
+/* Per-card gradients to match screenshot variations */
+.btn-green {
+  background: linear-gradient(90deg, #3DFF87 0%, #249951 100%);
+  box-shadow: 0 10px 24px rgba(61,255,135,0.12), inset 0 -6px 18px rgba(255,255,255,0.02);
+  color: #04120b;
+}
+.btn-red {
+  background: linear-gradient(90deg, #FF6B6B 0%, #C94B3C 100%);
+  box-shadow: 0 10px 24px rgba(201,75,60,0.10), inset 0 -6px 18px rgba(255,255,255,0.02);
+  color: #04120b;
+}
+.btn-purple {
+  background: linear-gradient(90deg, #8B5CF6 0%, #6D28D9 100%);
+  box-shadow: 0 10px 24px rgba(139,92,246,0.10), inset 0 -6px 18px rgba(255,255,255,0.02);
+  color: #04120b;
+}
+.btn-blue {
+  background: linear-gradient(90deg, #60A5FA 0%, #2563EB 100%);
+  box-shadow: 0 10px 24px rgba(37,99,235,0.10), inset 0 -6px 18px rgba(255,255,255,0.02);
+  color: #04120b;
 }
 
 /* ✅ Neon Divider */
